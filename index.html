@@ -314,9 +314,131 @@
 					<!--  ===========  chapter12 ======================   -->
 					<article class="hs-content" id="chapter12">
 						<div class="hs-inner">
-							<h2>Microsft Azure</h2>
-							<h3>Lorem ipsum dolor sit amet</h3>
-							<h4>Lorem ipsum dolor sit amet</h4>
+							<h2>Microsft Azure.</h2>
+							<h3>The Microsoft Cloud platform.</h3>
+							<h4>What is Azure?</h4>
+							<blockquote>
+								<p style="text-align: justify;">
+									<strong>Azure</strong>&nbsp;is a comprehensive<strong>&nbsp;set of cloud services</strong>
+									&nbsp;that software developers and IT professionals use to&nbsp;<strong>build</strong>,
+									&nbsp;<strong>deploy</strong>, and&nbsp;<strong>manage</strong><strong> applications</strong>
+									&nbsp;through&nbsp;<strong>Microsoft global network of datacenters</strong>.
+									<br />Microsoft Azure<strong>Integrated tools</strong>,&nbsp;<strong>DevOps</strong>, and
+									&nbsp;<strong>a marketplace</strong>&nbsp;support software developers efficiently building anything from
+									&nbsp;<strong>simple mobile</strong><strong> apps</strong>&nbsp;to
+									&nbsp;<strong>internet-scale solutions</strong>
+								</p>
+							</blockquote>
+
+							<h4>Configure deployment credentials for Azure App Service.</h4>
+							<h4>Create a deployment user</h4>
+							<p>
+								<br />In the Cloud Shell, create deployment credentials with the 
+								<span style="color: #0000ff;"><em><strong>az webapp</strong> </em></span>
+								deployment user set command. 
+								<br />This deployment user is required for FTP and local Git deployment to a web app. 
+								<br />The user name and password are account level. 
+								<br />They are different from your Azure subscription credentials.Replace &lt;username&gt; 
+								and &lt;password&gt; (including brackets) with a new user name and password. 
+								<br />The user name must be unique within Azure. The password must be at least eight 
+								characters long,
+								<br />with two of the following three elements: letters, numbers, symbols.
+							</p>
+							<h4>Use: Azure CLI</h4>
+							<pre style="text-align: justify;"><code>az webapp deployment user set --user-name &lt;
+								username&gt; --password &lt;password&gt;</code>
+							</pre>
+							<p style="text-align: justify;">You should get a JSON output, with the password shown as 
+								<span style="color: #0000ff;"><em><strong>null.</strong></em></span> 
+								<br />If you get a 'Conflict'. Details: 409 error, change the username. 
+								<br />If you get a 'Bad Request'. Details: 400 error, use a stronger password.
+							</p>
+							<p style="text-align: justify;">&nbsp;</p>
+							<blockquote>
+							<p style="text-align: justify;">
+								Note: You create this deployment user only once; you can use it for all your Azure 
+								deployments.<br />Record the user name and password. 
+								You need them to deploy the web app later.
+							</p>
+							</blockquote>
+							<pre style="text-align: justify;"><code>Requesting a Cloud Shell.Succeeded.</code>
+								<br /><code>Connecting terminal...</code><br />
+								<br /><code>Welcome to Azure Cloud Shell</code>
+							</pre>
+							<p style="text-align: justify;">
+								Type "az" to use Azure CLI 2.
+								<br />Type "help" to learn about Cloud Shell
+							</p>
+							<pre style="text-align: justify;">
+								<code>
+									dennis@Azure:~$ az webapp deployment user set --user-name dbaz --password 2******
+								</code><br />
+								<code>
+									{
+										</code><br /><code>"additionalProperties": {},</code><br />
+										<code>"id": null,</code><br />
+										<code>"kind": null,</code><br />
+										<code>"name": "web",</code><br />
+										<code>"publishingPassword": null,</code><br />
+										<code>"publishingPasswordHash": null,</code><br />
+										<code>"publishingPasswordHashSalt": null,</code><br />
+										<code>"publishingUserName": "dbaz",</code><br />
+										<code>"type": "Microsoft.Web/publishingUsers/web",</code><br />
+										<code>"userName": null</code><br /><code>
+									}
+								</code>
+							</pre>
+							<h4 style="text-align: justify;">Enable Git for your app</h4>
+							<pre style="text-align: justify;"><code>dennis@Azure:~$ az webapp deployment source config-local-git --name textedit --resource-group default-web-northeurope</code><br /><code>{</code><br /><code>"url": "https://dbaz@textedit.scm.azurewebsites.net/textedit.git"</code><br /><code>}</code></pre>
+							<h4 style="text-align: justify;">Deploy your project</h4>
+							<pre style="text-align: justify;">
+								<code>C:\GitHubDSKTP\text-editor&gt; 
+									git remote add azure https://dbaz@textedit.scm.azurewebsites.net/textedit.git
+								</code>
+							</pre>
+							<p style="text-align: justify;">
+								Push to the Azure remote to deploy your app with the following command. <br />
+								When prompted for a password, make sure that you enter the password you <br />
+								created in Configure a deployment user, not the password you use to log in to the Azure portal.</p>
+							<pre>
+								C:\GitHubDSKTP\text-editor&gt; 
+								git push azure master<br />
+								<br />Counting objects: 173, done.
+								<br />Delta compression using up to 2 threads.
+								<br />Compressing objects: 100% (117/117), done.
+								<br />Writing objects: 100% (173/173), 540.43 KiB | 10.60 MiB/s, done.
+								<br />Total 173 (delta 12), reused 162 (delta 7)
+								<br />remote: Resolving deltas: 100% (12/12), done.
+								<br />remote: Updating branch 'master'.
+								<br />remote: Updating submodules.
+								<br />remote: Preparing deployment for commit id '9504029c27'.
+								<br />remote: Generating deployment script.
+								<br />remote: Generating deployment script for Web Site
+								<br />remote: Generated deployment script files
+								<br />remote: Running deployment command...
+								<br />remote: Handling Basic Web Site deployment.
+								<br />remote: KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot'
+								<br />remote: Copying files:... 
+								<br />remote: Omitting next output lines...
+								<br />remote: Finished successfully.
+								<br />remote: Running post deployment command(s)...
+								<br />remote: Deployment successful.
+								<br />To https://textedit.scm.azurewebsites.net/textedit.git
+								<br />* [new branch] master -&gt; master
+							</pre>
+							<h4 style="text-align: justify;">Enable continuous deployment:</h4>
+							<p style="text-align: justify;">
+								Publish your app content to the repository that will be used for continuous deployment.
+								<br />For more information on publishing your project to these services,
+								 see Create a repo (GitHub), Create a repo (BitBucket), and Get started with VSTS.
+							</p>
+							<p style="text-align: justify;">
+								In your app's <strong>menu blade</strong> in the <strong>Azure portal</strong>, 
+								click <strong>APP DEPLOYMENT</strong> <strong>&gt; Deployment options. </strong>
+								<br />Click <strong>Choose <em>Source</em></strong>, then select the 
+								<strong>deployment source.</strong>
+							</p>
+														
 							
 						</div>
 					</article><!-- end /chapter12 -->
