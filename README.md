@@ -2,7 +2,7 @@
 
 Coding Notebook
 
-## [Live CV](http://dennisBazanye.github.io) dennisBazanye.github.io
+## [Demo eBook](https://codenotebook.azurewebsites.net/) codenotebook.azurewebsites.net
 
 ## About
 
