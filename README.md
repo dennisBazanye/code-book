@@ -1,9 +1,9 @@
-# code-book
+# code-Notebook
 
 Coding Notebook
 
-## [Demo eBook](https://codenotebook.azurewebsites.net/) codenotebook.azurewebsites.net
+## [Live eNotebook](https://enotebook.azurewebsites.net/) enotebook.azurewebsites.net
 
 ## About
 
-This is my coding notebook site
+This is my coding documentation notebook site
