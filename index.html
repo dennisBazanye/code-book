@@ -140,58 +140,7 @@
 							<h2>Javascript</h2>
 							<h3>Language of the Web</h3>
 							<h4>Javascript Basics</h4>
-							<p> 
-								&bull;JavaScript is a client-side, 
-								object-based, case-sensitive language<br />
-								whose interpreter is embedded in web browser software
-								<br />&bull; Variable names and function names must 
-								avoid the JavaScript<br />keywords, reserved words, 
-								and object names<br />&bull; 
-								For JavaScript code each opening 
-								HTML &lt;script&gt; tag must
-								<br />specify the MIME type of &ldquo;
-								text/javascript&rdquo; to its type attribute
-								<br />&bull; Script blocks may include single-line and 
-								multi-line comments<br />&bull; 
-								Each JavaScript statement must be terminated 
-								by a semi-colon<br />&bull; Inline JavaScript code 
-								can be assigned to any HTML event<br />attribute, 
-								such as onload, or enclosed within 
-								a &lt;script&gt;
-								<br />element in the document body section &ndash; 
-								but is best avoided<br />&bull; 
-								All JavaScript code is best located in an 
-								external file whose
-								<br />path is specified to an src attribute of the 
-								&lt;script&gt; tag<br />&bull; 
-								Unobtrusive JavaScript places all script code in an
-								 external file<br />and can specify a function to the
-								  DOMContentLoaded event to
-								  <br />set behaviors when the HTML document has 
-								  loaded<br />&bull; The window.onload event can be 
-								  used to set behaviors for<br />
-								  older browsers when the entire page content 
-								  has loaded<br />&bull; JavaScript variables are 
-								  declared using the var keyword and can
-								  <br />store any data type &ndash; boolean, 
-								  number, string, function, or object
-								  <br />&bull; JavaScript functions are 
-								  declared using the function keyword<br />
-								  and the function name must have trailing 
-								  parentheses,<br />followed by a pair of { } 
-								  braces enclosing statements to execute
-								  <br />&bull; A function declaration may 
-								  specify arguments within its<br />
-								  trailing parentheses that must be passed 
-								  from its caller<br />&bull; 
-								  A value can be returned to the caller using 
-								  the return keyword<br />&bull; 
-								  Unlike global variables declared in the main
-								   script body, local<br />variables 
-								   declared inside a function are only
-									accessible from<br />
-									within that function
-								</p>
+							
 							
 						</div>
 					</article><!-- end /chapter2 js -->
@@ -203,31 +152,7 @@
 							<h3>JavaScript library</h3>
 							<h4>Jquery Basics</h4>
 
-							<p>&bull; jQuery is a lightweight multi-browser JavaScript library that
-								<br />makes it easier to incorporate JavaScript features on websites
-								<br />&bull; jQuery can be enabled by hosting the minimized jQuery
-								<br />library file on your website or alternatively by indicating the
-								<br />library file&rsquo;s location online at the Google or Microsoft CDN
-								<br />&bull; A jQuery statement typically contains a selector to return a
-								<br />collection of elements and an action to be performed on them
-								<br />&bull; The $( document ).ready( ) function gets called when the
-								<br />DOM has loaded and so can usefully contain an anonymous
-								<br />JavaScript function enclosing all jQuery statements
-								<br />&bull; The $( ) function syntax is a shortcut for the jQuery( ) function
-								<br />that can be used instead, and if using jQuery.noConflict()
-								<br />&bull; jQuery&rsquo;s most basic selectors specify elements by tag name
-								<br />$( &ldquo;p&rdquo; ), by identity $( &ldquo;#theId&rdquo; ), and by class $( &ldquo;p.theClass&rdquo; )
-								<br />&bull; jQuery Attribute selectors select all elements containing a set
-								<br />attribute $( &ldquo;[lang]&rdquo; ) or those of set value $( &ldquo;[lang=&rsquo;fr&rsquo;]&rdquo; )
-								<br />&bull; jQuery Order selectors select elements according to their zerobased
-								<br />index position in a selected collection $( &ldquo;li:eq( 1 )&rdquo; )
-								<br />&bull; jQuery Child selectors select only all immediate children of a
-								<br />specified parent element, but not grandchildren $( &ldquo;ol &gt; li&rdquo; )
-								<br />&bull; jQuery Descendant selectors select all hierarchy levels below a
-								<br />specified parent element, including grandchildren $( &ldquo;p span&rdquo; )
-								<br />&bull; Multiple selection expressions can appear in a single jQuery
-								<br />selector as a comma-separated list
-							</p>
+							
 						</div>
 					</article><!-- end /chapter3 -->
 
@@ -330,116 +255,6 @@
 								</p>
 							</blockquote>
 
-							<h4>Configure deployment credentials for Azure App Service.</h4>
-							<h4>Create a deployment user</h4>
-							<p>
-								<br />In the Cloud Shell, create deployment credentials with the 
-								<span style="color: #0000ff;"><em><strong>az webapp</strong> </em></span>
-								deployment user set command. 
-								<br />This deployment user is required for FTP and local Git deployment to a web app. 
-								<br />The user name and password are account level. 
-								<br />They are different from your Azure subscription credentials.Replace &lt;username&gt; 
-								and &lt;password&gt; (including brackets) with a new user name and password. 
-								<br />The user name must be unique within Azure. The password must be at least eight 
-								characters long,
-								<br />with two of the following three elements: letters, numbers, symbols.
-							</p>
-							<h4>Use: Azure CLI</h4>
-							<pre style="text-align: justify;"><code>az webapp deployment user set --user-name &lt;
-								username&gt; --password &lt;password&gt;</code>
-							</pre>
-							<p style="text-align: justify;">You should get a JSON output, with the password shown as 
-								<span style="color: #0000ff;"><em><strong>null.</strong></em></span> 
-								<br />If you get a 'Conflict'. Details: 409 error, change the username. 
-								<br />If you get a 'Bad Request'. Details: 400 error, use a stronger password.
-							</p>
-							<p style="text-align: justify;">&nbsp;</p>
-							<blockquote>
-							<p style="text-align: justify;">
-								Note: You create this deployment user only once; you can use it for all your Azure 
-								deployments.<br />Record the user name and password. 
-								You need them to deploy the web app later.
-							</p>
-							</blockquote>
-							<pre style="text-align: justify;"><code>Requesting a Cloud Shell.Succeeded.</code>
-								<br /><code>Connecting terminal...</code><br />
-								<br /><code>Welcome to Azure Cloud Shell</code>
-							</pre>
-							<p style="text-align: justify;">
-								Type "az" to use Azure CLI 2.
-								<br />Type "help" to learn about Cloud Shell
-							</p>
-							<pre style="text-align: justify;">
-								<code>
-									dennis@Azure:~$ az webapp deployment user set --user-name dbaz --password 2******
-								</code><br />
-								<code>
-									{
-										</code><br /><code>"additionalProperties": {},</code><br />
-										<code>"id": null,</code><br />
-										<code>"kind": null,</code><br />
-										<code>"name": "web",</code><br />
-										<code>"publishingPassword": null,</code><br />
-										<code>"publishingPasswordHash": null,</code><br />
-										<code>"publishingPasswordHashSalt": null,</code><br />
-										<code>"publishingUserName": "dbaz",</code><br />
-										<code>"type": "Microsoft.Web/publishingUsers/web",</code><br />
-										<code>"userName": null</code><br /><code>
-									}
-								</code>
-							</pre>
-							<h4 style="text-align: justify;">Enable Git for your app</h4>
-							<pre style="text-align: justify;"><code>dennis@Azure:~$ az webapp deployment source config-local-git --name textedit --resource-group default-web-northeurope</code><br /><code>{</code><br /><code>"url": "https://dbaz@textedit.scm.azurewebsites.net/textedit.git"</code><br /><code>}</code></pre>
-							<h4 style="text-align: justify;">Deploy your project</h4>
-							<pre style="text-align: justify;">
-								<code>C:\GitHubDSKTP\text-editor&gt; 
-									git remote add azure https://dbaz@textedit.scm.azurewebsites.net/textedit.git
-								</code>
-							</pre>
-							<p style="text-align: justify;">
-								Push to the Azure remote to deploy your app with the following command. <br />
-								When prompted for a password, make sure that you enter the password you <br />
-								created in Configure a deployment user, not the password you use to log in to the Azure portal.</p>
-							<pre>
-								C:\GitHubDSKTP\text-editor&gt; 
-								git push azure master<br />
-								<br />Counting objects: 173, done.
-								<br />Delta compression using up to 2 threads.
-								<br />Compressing objects: 100% (117/117), done.
-								<br />Writing objects: 100% (173/173), 540.43 KiB | 10.60 MiB/s, done.
-								<br />Total 173 (delta 12), reused 162 (delta 7)
-								<br />remote: Resolving deltas: 100% (12/12), done.
-								<br />remote: Updating branch 'master'.
-								<br />remote: Updating submodules.
-								<br />remote: Preparing deployment for commit id '9504029c27'.
-								<br />remote: Generating deployment script.
-								<br />remote: Generating deployment script for Web Site
-								<br />remote: Generated deployment script files
-								<br />remote: Running deployment command...
-								<br />remote: Handling Basic Web Site deployment.
-								<br />remote: KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot'
-								<br />remote: Copying files:... 
-								<br />remote: Omitting next output lines...
-								<br />remote: Finished successfully.
-								<br />remote: Running post deployment command(s)...
-								<br />remote: Deployment successful.
-								<br />To https://textedit.scm.azurewebsites.net/textedit.git
-								<br />* [new branch] master -&gt; master
-							</pre>
-							<h4 style="text-align: justify;">Enable continuous deployment:</h4>
-							<p style="text-align: justify;">
-								Publish your app content to the repository that will be used for continuous deployment.
-								<br />For more information on publishing your project to these services,
-								 see Create a repo (GitHub), Create a repo (BitBucket), and Get started with VSTS.
-							</p>
-							<p style="text-align: justify;">
-								In your app's <strong>menu blade</strong> in the <strong>Azure portal</strong>, 
-								click <strong>APP DEPLOYMENT</strong> <strong>&gt; Deployment options. </strong>
-								<br />Click <strong>Choose <em>Source</em></strong>, then select the 
-								<strong>deployment source.</strong>
-							</p>
-														
-							
 						</div>
 					</article><!-- end /chapter12 -->
 
